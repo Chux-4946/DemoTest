@@ -10,10 +10,10 @@ test('test', async ({ page }) => {
   await page.locator('[data-test="checkout"]').click();
   await page.locator('[data-test="firstName"]').fill('test1');
  // await page.locator('[data-test="lastName"]').fill('2');
-  let lastname= await page.locator('[data-test="lastName"]')
+  let lastname= page.locator('[data-test="lastName"]');
 
   //await expect(lastname).toBeVisible();
-  await expect(lastname).toBeFalsy();
+  expect(lastname).toBeFalsy();
   
   await lastname.fill('John');
 
